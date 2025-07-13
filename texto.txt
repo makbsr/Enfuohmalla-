@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Malla Enfermería UOH</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f8f9fa; }
+        h1, h2 { color: #006699; }
+        .semester { margin-bottom: 1.5rem; }
+        .subject { 
+            background: white; 
+            border: 1px solid #ccc; 
+            border-radius: 8px;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .subject:hover { background: #e6f2ff; }
+        #infoBox {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #006699;
+            border-radius: 8px;
+            background: #ffffff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🩺 Malla Interactiva Enfermería UOH</h1>
+
+    <div class="semester">
+        <h2>Semestre 1</h2>
+        <div class="subject" onclick="showInfo('Fundamentos disciplinares de enfermería', 7, 'Ninguno', 1)">Fundamentos disciplinares de enfermería</div>
+        <div class="subject" onclick="showInfo('Matemáticas y Bioestadística', 6, 'Ninguno', 1)">Matemáticas y Bioestadística</div>
+        <div class="subject" onclick="showInfo('Ética y Bioética', 5, 'Ninguno', 1)">Ética y Bioética</div>
+        <div class="subject" onclick="showInfo('Química y Bioquímica', 6, 'Ninguno', 1)">Química y Bioquímica</div>
+        <div class="subject" onclick="showInfo('Sociedad y Salud I', 3, 'Ninguno', 1)">Sociedad y Salud I</div>
+        <div class="subject" onclick="showInfo('Alfabetización Académica', 3, 'Ninguno', 1)">Alfabetización Académica</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 2</h2>
+        <div class="subject" onclick="showInfo('Gestión del cuidado I', 7, 'Fundamentos disciplinares de enfermería', 2)">Gestión del cuidado I</div>
+        <div class="subject" onclick="showInfo('Sociedad y Salud II', 3, 'Sociedad y Salud I', 2)">Sociedad y Salud II</div>
+        <div class="subject" onclick="showInfo('Histología y Embriología', 5, 'Ninguno', 2)">Histología y Embriología</div>
+        <div class="subject" onclick="showInfo('Anatomía', 6, 'Ninguno', 2)">Anatomía</div>
+        <div class="subject" onclick="showInfo('Biología y Genética', 6, 'Matemáticas y Bioestadística, Química y Bioquímica', 2)">Biología y Genética</div>
+        <div class="subject" onclick="showInfo('CFG', 3, 'Ninguno', 2)">CFG</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 3</h2>
+        <div class="subject" onclick="showInfo('Gestión del cuidado II', 7, 'Gestión del cuidado I, Biología y Genética, Anatomía', 3)">Gestión del cuidado II</div>
+        <div class="subject" onclick="showInfo('Educación para la salud', 3, 'Ninguno', 3)">Educación para la salud</div>
+        <div class="subject" onclick="showInfo('Sociedad y Salud III', 3, 'Sociedad y Salud II', 3)">Sociedad y Salud III</div>
+        <div class="subject" onclick="showInfo('Psicología General y Evolutiva', 3, 'Sociedad y Salud II, Gestión del cuidado I', 3)">Psicología General y Evolutiva</div>
+        <div class="subject" onclick="showInfo('Salud Pública', 4, 'Matemáticas y Bioestadística, Sociedad y Salud II', 3)">Salud Pública</div>
+        <div class="subject" onclick="showInfo('Biofísica y Fisiología', 7, 'Biología y Genética, Anatomía, Histología y Embriología', 3)">Biofísica y Fisiología</div>
+        <div class="subject" onclick="showInfo('Inglés I / CFG', 3, 'Ninguno', 3)">Inglés I / CFG</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 4</h2>
+        <div class="subject" onclick="showInfo('Enfermería en salud mental', 8, 'Biofísica y Fisiología, Gestión del cuidado II, Educación para la salud, Psicología General y Evolutiva, Sociedad y Salud III', 4)">Enfermería en salud mental</div>
+        <div class="subject" onclick="showInfo('Nutrición', 3, 'Biología y Genética, Biofísica y Fisiología', 4)">Nutrición</div>
+        <div class="subject" onclick="showInfo('Agentes vivos de enfermedad', 4, 'Biología y Genética', 4)">Agentes vivos de enfermedad</div>
+        <div class="subject" onclick="showInfo('Fisiopatología', 5, 'Biofísica y Fisiología', 4)">Fisiopatología</div>
+        <div class="subject" onclick="showInfo('Farmacología', 7, 'Biofísica y Fisiología', 4)">Farmacología</div>
+        <div class="subject" onclick="showInfo('Inglés II / CFG', 3, 'Inglés I', 4)">Inglés II / CFG</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 5</h2>
+        <div class="subject" onclick="showInfo('Enfermería en niños, niñas y adolescentes', 16, 'Enfermería en salud mental, Farmacología, Fisiopatología, Nutrición', 5)">Enfermería en niños, niñas y adolescentes</div>
+        <div class="subject" onclick="showInfo('Salud Escolar', 4, 'Enfermería en salud mental, Nutrición', 5)">Salud Escolar</div>
+        <div class="subject" onclick="showInfo('Salud Pública en Enfermería', 4, 'Salud Pública', 5)">Salud Pública en Enfermería</div>
+        <div class="subject" onclick="showInfo('Gestión en Salud I', 3, 'Ninguno', 5)">Gestión en Salud I</div>
+        <div class="subject" onclick="showInfo('Inglés III / CFG', 3, 'Inglés II', 5)">Inglés III / CFG</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 6</h2>
+        <div class="subject" onclick="showInfo('Enfermería en adulto y adulto mayor I', 16, 'Enfermería en niños, niñas y adolescentes, Salud Escolar', 6)">Enfermería en adulto y adulto mayor I</div>
+        <div class="subject" onclick="showInfo('Psicología y Salud Comunitaria', 4, 'Psicología General y Evolutiva, Salud Pública en Enfermería', 6)">Psicología y Salud Comunitaria</div>
+        <div class="subject" onclick="showInfo('Gestión en Salud II', 3, 'Gestión en Salud I', 6)">Gestión en Salud II</div>
+        <div class="subject" onclick="showInfo('Investigación en salud', 4, 'Matemáticas y Bioestadística, Ética y Bioética', 6)">Investigación en salud</div>
+        <div class="subject" onclick="showInfo('Inglés IV', 3, 'Inglés III', 6)">Inglés IV</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 7</h2>
+        <div class="subject" onclick="showInfo('Enfermería en adulto y adulto mayor II', 16, 'Enfermería en adulto y adulto mayor I', 7)">Enfermería en adulto y adulto mayor II</div>
+        <div class="subject" onclick="showInfo('Enfermería Ocupacional', 3, 'Psicología y Salud Comunitaria', 7)">Enfermería Ocupacional</div>
+        <div class="subject" onclick="showInfo('Gestión en Salud III', 4, 'Gestión en Salud II', 7)">Gestión en Salud III</div>
+        <div class="subject" onclick="showInfo('Seminario de Investigación I', 4, 'Investigación en salud', 7)">Seminario de Investigación I</div>
+        <div class="subject" onclick="showInfo('Inglés V', 3, 'Inglés IV', 7)">Inglés V</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 8</h2>
+        <div class="subject" onclick="showInfo('Cuidados complejos en enfermería', 14, 'Enfermería en adulto y adulto mayor II', 8)">Cuidados complejos en enfermería</div>
+        <div class="subject" onclick="showInfo('Modelos emergentes del cuidado', 9, 'Enfermería en adulto y adulto mayor II', 8)">Modelos emergentes del cuidado</div>
+        <div class="subject" onclick="showInfo('Seminario de Investigación II', 4, 'Seminario de Investigación I', 8)">Seminario de Investigación II</div>
+        <div class="subject" onclick="showInfo('Inglés VI', 3, 'Inglés V', 8)">Inglés VI</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 9</h2>
+        <div class="subject" onclick="showInfo('Internado I', 23, 'Todo hasta 8 semestre', 9)">Internado I</div>
+        <div class="subject" onclick="showInfo('Enfermería en urgencia', 11, 'Todo hasta 8 semestre', 9)">Enfermería en urgencia</div>
+    </div>
+
+    <div class="semester">
+        <h2>Semestre 10</h2>
+        <div class="subject" onclick="showInfo('Internado II', 23, 'Todo hasta 8 semestre', 10)">Internado II</div>
+        <div class="subject" onclick="showInfo('Integración profesional', 3, 'Todo hasta 8 semestre', 10)">Integración profesional</div>
+    </div>
+
+    <div id="infoBox"></div>
+
+    <script>
+        function showInfo(nombre, sct, prereq, semestre) {
+            const infoBox = document.getElementById('infoBox');
+            infoBox.innerHTML = `
+                <h3>📌 ${nombre}</h3>
+                <p><strong>Semestre:</strong> ${semestre}</p>
+                <p><strong>Créditos SCT:</strong> ${sct}</p>
+                <p><strong>Prerrequisitos:</strong> ${prereq}</p>
+            `;
+            infoBox.style.display = "block";
+            window.scrollTo({top: infoBox.offsetTop - 20, behavior: 'smooth'});
+        }
+    </script>
+
+</body>
+</html>
